@@ -1,7 +1,7 @@
 import psycopg2
 from databasefunc import create_table_test, insert_new_data_test, drop_table_test, get_all_test, update_value_test, get_single_value, delete_value_test
 from Gsheets import load_sheet
-from telegram_notice import order_to_notice
+from telegram_notice import order_to_notice, create_telegram_csv
 from datetime import datetime
 
 
@@ -40,10 +40,12 @@ def first_create(connection):
     drop_table_test(connection)
     create_table_test(connection)
 
+    # Create file for save already sent notifications
+    create_telegram_csv()
+
     data, _ = load_sheet()
 
     insert_new_data_test(connection, data)
-    print(get_all_test(connection))
 
 
 def update_and_create_rows(connection, data):

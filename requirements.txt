@@ -12,5 +12,4 @@ django
 django-google-charts
 django-qsstats-magic
 django-tables2
-
-
+pandas

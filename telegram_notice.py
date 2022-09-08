@@ -74,3 +74,8 @@ def send_telegram_notice(pk):
 
     # disconnecting the telegram session
     client.disconnect()
+
+
+def create_telegram_csv():
+    with open('already_send.csv', 'w', encoding='utf8') as file:
+        file.write(f'id,date\n')
