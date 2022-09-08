@@ -4,5 +4,13 @@ gspread
 oauth2client
 psycopg2-binary
 google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
 telebot
 telethon
+django
+django-google-charts
+django-qsstats-magic
+django-tables2
+
+
