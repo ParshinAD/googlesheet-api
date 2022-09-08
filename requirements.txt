@@ -1,0 +1,8 @@
+psycopg2
+requests
+gspread
+oauth2client
+psycopg2-binary
+google-api-python-client
+telebot
+telethon

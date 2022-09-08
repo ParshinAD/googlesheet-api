@@ -1,0 +1,34 @@
+{# tutorial/templates/tutorial/people.html #}
+{% load render_table from django_tables2 %}
+<style>
+    .table-container {
+        border: solid 1px #DDEEEE;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font: normal 13px Arial, sans-serif;
+    }
+    .table-container thead th {
+        background-color: #DDEFEF;
+        border: solid 1px #DDEEEE;
+        color: #336B6B;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+    }
+    .table-container tbody td {
+        border: solid 1px #DDEEEE;
+        color: #333;
+        padding: 10px;
+        text-shadow: 1px 1px 1px #fff;
+    }
+</style>
+<!doctype html>
+<html>
+    <head>
+        <title>List of persons</title>
+    </head>
+    <h1>Test Table.</h1>
+    <body>
+        {% render_table table %}
+    </body>
+</html>

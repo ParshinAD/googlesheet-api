@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  database:
+    image: postgres
+    ports:
+      - '5432:5432'
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 4RYmCKKF
+      POSTGRES_DB: test
+
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - database
+    ports:
+      - 8080:8080
+
