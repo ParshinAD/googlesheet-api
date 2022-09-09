@@ -17,6 +17,8 @@ cd googlesheet-api
 pip install -r requirements.txt
 ```
 
+## edit config.py
+
 ## Start main program
 
 ```bash
