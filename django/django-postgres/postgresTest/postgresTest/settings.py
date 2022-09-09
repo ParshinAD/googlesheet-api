@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from postgresTest.getconfig import get_config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -107,14 +108,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+database_config = get_config()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test',
-        'USER': 'postgres',
-        'PASSWORD': '4RYmCKKF',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': database_config.db_name,
+        'USER': database_config.user,
+        'PASSWORD': database_config.password,
+        'HOST': database_config.host,
+        'PORT': database_config.port,
     }
 }
 
