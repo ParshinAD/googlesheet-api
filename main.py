@@ -2,7 +2,7 @@ import psycopg2
 from config import host, user, password, db_name
 from cycle import main_cycle, first_create
 import os
-import time
+import multiprocessing
 
 
 def django_app():
@@ -40,14 +40,10 @@ def main():
             print('Connection closed')
 
 
-import multiprocessing
-
 if __name__ == '__main__':
     process1 = multiprocessing.Process(target=django_app)
     process2 = multiprocessing.Process(target=main)
     # starting google sheet parser
     process2.start()
-    # # wait creating test table
-    # time.sleep(1)
     # starting django app
     process1.start()
