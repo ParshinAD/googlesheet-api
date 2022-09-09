@@ -52,3 +52,7 @@ python main.py
 
 **django link**:
 http://localhost:8000/gsapi/test2/
+
+## telegram notification
+
+if an entry with today appears in the table, you will receive a telegram notification.
