@@ -4,7 +4,7 @@ from telethon.sync import TelegramClient
 from datetime import date, datetime, timedelta
 from telethon.tl.types import InputPeerUser, InputPeerChannel
 from telethon import TelegramClient, sync, events
-from config import api_id, api_hash, token
+from config import api_id, api_hash, token, phone
 import csv
 
 
@@ -16,7 +16,7 @@ def order_to_notice(data):
     '''
     for row in data:
         today = date.today()
-        row_date = datetime.strptime(row[3], '%d.%m.%Y')
+        row_date = datetime.strptime(row.delivery_date, '%d.%m.%Y')
         if today == row_date.date():
 
             # Read already sended notifications
@@ -25,11 +25,11 @@ def order_to_notice(data):
                 id_dates = {val['id']: datetime.strptime(val['date'], '%d.%m.%Y') for val in reader}
 
             # check if a notification has been sent for this order yet, or if its date has changed to a newer one
-            if (row[0] not in id_dates) or (id_dates[row[0]].date() != row_date.date()):
-                send_telegram_notice(row[0])
+            if (row.id not in id_dates) or (id_dates[row.id].date() != row_date.date()):
+                send_telegram_notice(row.order_num)
 
                 with open('already_send.csv', 'a', encoding='utf8') as file:
-                    file.write(f'{row[0]},{row[3]}\n')
+                    file.write(f'{row.id},{row.delivery_date}\n')
 
 
 def send_telegram_notice(pk):
@@ -39,9 +39,6 @@ def send_telegram_notice(pk):
     :return: None
     '''
     message = f"overdue order №{pk}"
-
-    # your phone number
-    phone = '+79258031664'
 
     # creating a telegram session and assigning
     # it to a variable client
@@ -66,6 +63,7 @@ def send_telegram_notice(pk):
 
         # sending message using telegram client
         client.send_message(receiver, message, parse_mode='html')
+        print('[INFO] Send telegram message')
     except Exception as e:
 
         # there may be many error coming in while like peer

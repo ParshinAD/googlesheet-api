@@ -9,12 +9,13 @@ if local_db:
 elif docker_web_db:
     host = '192.168.99.100' # ip my virtual box ip.  Maybe you can use '0.0.0.0'
 
-user = 'postgres'
-password = '4RYmCKKF'
-db_name = 'test' #test
+user = 'postgres_USER'
+password = 'postgres_PASSWORD'
+db_name = 'DB_NAME' #test
 
 # get your api_id, api_hash, token
 # from telegram as described above
-api_id = '14639662'
-api_hash = 'fb9d92c11cd69484e8b6f4fde42cb95b'
-token = '5779514133:AAExiEfFZXUsKWTdKKqKvBB84k0qc7j5LfE'
+api_id = 'api_id'
+api_hash = 'api_hash'
+token = 'token:TOKEN'
+phone = 'YOUR_PHONE'

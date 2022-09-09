@@ -2,6 +2,15 @@ from __future__ import print_function
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import requests
+from typing import NamedTuple
+
+
+class test_data(NamedTuple):
+    id: int
+    order_num: int
+    price_usd: float
+    delivery_date: str
+    price_rub: float
 
 
 def load_sheet():
@@ -37,6 +46,6 @@ def process_data(values):
     '''
     data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
     usd = data['Valute']['USD']['Value']
-    values = list(map(lambda x: x + [round(float(x[2]) * usd, 2)], values[1:]))
-    indexes = list(map(lambda x: x[0], values))
+    values = tuple(test_data(*x, round(float(x[2]) * usd, 2)) for x in values[1:])
+    indexes = tuple(map(lambda x: x[0], values))
     return values, indexes

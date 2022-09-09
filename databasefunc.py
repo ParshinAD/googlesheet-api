@@ -36,7 +36,7 @@ def insert_new_data_test(connection, data, skip_first_row=True):
         for value in data[skip_first_row:]:
             cursor.execute(
                 f"""INSERT INTO test (id, order_num, price_usd, delivery_date, price_rub) VALUES
-                ({value[0]}, {value[1]}, {value[2]}, '{value[3]}', {value[4]});"""
+                ({value.id}, {value.order_num}, {value.price_usd}, '{value.delivery_date}', {value.price_rub});"""
             )
             connection.commit()
         print('[INFO] Successful insert')
@@ -94,11 +94,11 @@ def update_value_test(connection, row):
     with connection.cursor() as cursor:
         cursor.execute(
             f"""UPDATE test
-                SET order_num = {row[1]},
-                    price_usd = {row[2]},
-                    delivery_date = '{row[3]}',
-                    price_rub = {row[4]}
-                WHERE id = {row[0]};"""
+                SET order_num = {row.order_num},
+                    price_usd = {row.price_usd},
+                    delivery_date = '{row.delivery_date}',
+                    price_rub = {row.price_rub}
+                WHERE id = {row.id};"""
         )
         connection.commit()
         print('[INFO] Update Successfully')
