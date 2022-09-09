@@ -48,6 +48,8 @@ pip install -r requirements.txt
 
 2) edit telegram api_id, api_hash: https://core.telegram.org/api/obtaining_api_id
 
+and user_id: https://www.alphr.com/telegram-find-user-id/
+
 ## Start main program
 
 ```bash
