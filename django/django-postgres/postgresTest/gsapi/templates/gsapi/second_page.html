@@ -9,36 +9,54 @@
     <title>second try.</title>
 </head>
 <body>
-    <h1 id="total">Total = {{ total }}</h1>
-    {% render_table table %}
+	<div class="content">
+		<div class="logo_container">
+			<img src="{% static "gsapi/logo.png" %}" alt="logo" class="logo">
+		</div>
+		
+		<div class="statistics">
+			<div class="total_wrapper">
+				<div class="total_title">
+					<center><span class="total_title_text">Total</span></center>
+				</div>
+				<div class="total_content">
+					<center><span class="total_content_text">{{ total }}</span></center>
+				</div>
+			</div>
+		
+			<div class="table_wrapper">
+				{% render_table table %}
+			</div>
+		</div>
 
-{% load googlecharts %}
+		<div class="graph">
+			<div id="sum_graph"></div>
 
-<div class="graph">
-	<div id="sum_graph"></div>
+			{% load googlecharts %}
 
-	{% googlecharts %}
-		{% data values "count" %}
-			{% col "string" "Date" %}"{{ val|date:"M j" }}"{% endcol %}
-			{% col "number" "# of payments" %}{{ val }}{% endcol %}
-		{% enddata %}
+			{% googlecharts %}
+				{% data values "count" %}
+					{% col "string" "Date" %}"{{ val|date:"M j" }}"{% endcol %}
+					{% col "number" "# of payments" %}{{ val }}{% endcol %}
+				{% enddata %}
 
-		{% options %}
-			kind: "LineChart",
-			options: {
-				backgroundColor: "#f9f9f9",
-				colors: ["#09f"],
-				gridlineColor: "#ddd",
-				legend: "none",
-				vAxis: {minValue: 0},
-				chartArea: {left: 40, top: 20, width: 480, height: 360},
-				width: 600,
-				height: 480
-			}
-		{% endoptions %}
+				{% options %}
+					kind: "LineChart",
+					options: {
+						backgroundColor: "#f9f9f9",
+						colors: ["#09f"],
+						gridlineColor: "#ddd",
+						legend: "none",
+						vAxis: {minValue: 0},
+						chartArea: {left: 40, top: 20, width: 480, height: 360},
+						width: 600,
+						height: 480
+					}
+				{% endoptions %}
 
-		{% graph "sum_graph" "count" %} {# используем опции по умолчанию #}
-	{% endgooglecharts %}
-</div>
+				{% graph "sum_graph" "count" %} {# используем опции по умолчанию #}
+			{% endgooglecharts %}
+		</div>
+	</div>
 </body>
 </html>

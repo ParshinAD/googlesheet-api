@@ -1,20 +1,117 @@
-.table-container {
-    border: solid 1px #DDEEEE;
+a,a:visited{text-decoration: none;}
+body {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+    width: 1250px;
+    height: 1200px;
+    padding: 10px;
+    position: relative;
+
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff
+}
+
+.logo_container {
+    width: 100%;
+    height: 100px;
+    background-color: #9af19e;
+    position: relative;
+}
+.logo {
+    width: 140px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.graph {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    left: 10px;
+    top: 140px;
+}
+
+.statistics {
+    width: 600px;
+    height: 800px;
+    margin-top: 10px;
+    position: absolute;
+    right: 10px;
+}
+
+.total_wrapper {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    height: 120px;
+    border: 1px solid #000;
+}
+.total_title {
+    width: 100%;
+    height: 30px;
+    background-color: #000;
+}
+.total_title_text {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    color: aliceblue;
+    line-height: 30px;
+}
+.total_content {
+    
+}
+.total_content_text {
+    line-height: 90px;
+    font-size: 80px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.table_wrapper {
+    margin-top: 20px;
+}
+
+.table {
+    width: 600px;
     border-collapse: collapse;
-    border-spacing: 0;
+    border-color: #000;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
     font: normal 13px Arial, sans-serif;
 }
-.table-container thead th {
-    background-color: #DDEFEF;
-    border: solid 1px #DDEEEE;
-    color: #336B6B;
-    padding: 10px;
-    text-align: left;
-    text-shadow: 1px 1px 1px #fff;
+
+tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);;
 }
-.table-container tbody td {
-    border: solid 1px #DDEEEE;
-    color: #333;
-    padding: 10px;
-    text-shadow: 1px 1px 1px #fff;
+td {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+    height: 36px;
+    background-color: #030220;
+}
+.table thead tr th {
+    min-width: 20px;
+}
+.table thead tr th a{
+    font-size: 16px;
+    color: #e4f2ff;
+}
+.table thead tr th:not(:first-child) a{
+    padding: 0 20px;
+}
+
+.table tbody tr {
+    color: black;
+    font-size: 14px;
+    background-color: #e4f2ff;
+    text-align: right;
+
 }
