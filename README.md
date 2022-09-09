@@ -13,7 +13,7 @@ git clone https://github.com/ParshinAD/googlesheet-api.git
 download all packages
 
 ```bash
-cd /googlesheet-api
+cd googlesheet-api
 pip install -r requirements.txt
 ```
 
