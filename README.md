@@ -12,6 +12,11 @@ google sheet link:
 
 https://docs.google.com/spreadsheets/d/1nwKGU-Dve1YzQIRV2bhRZ--1n5oDT_IjW15zH-61fcs/edit#gid=0
 
+**django link**:
+
+http://localhost:8000/gsapi/test2/
+
+
 ## Downloading
 
 Use the git manager to download googlesheet-api.
@@ -48,10 +53,6 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
-
-
-**django link**:
-http://localhost:8000/gsapi/test2/
 
 ## telegram notification
 
