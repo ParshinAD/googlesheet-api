@@ -8,13 +8,6 @@ from qsstats import QuerySetStats
 from django.db.models import Sum, Count
 
 
-
-def test1(request):
-    table = TestTable(Test.objects.order_by('id').all())
-    table.paginate(page=request.GET.get("page", 1), per_page=13)
-    return render(request, "gsapi/first_page.html", {"table": table})
-
-
 def test2(request):
     table = TestTable(Test.objects.order_by('id').all())
     table.paginate(page=request.GET.get("page", 1), per_page=13)
