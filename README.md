@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ### edit config.py
 
-1) edit user, password and database_name
+1) edit username, password and database_name from your PostgreSQL
 2) edit telegram api_id, api_hash: https://core.telegram.org/api/obtaining_api_id
 
 ## Start main program
