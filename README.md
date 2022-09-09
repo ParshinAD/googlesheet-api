@@ -30,7 +30,7 @@ python main.py
 in second terminal:
 
 ```bash
-python main.py
+python django/django-postgres/postgresTest/manage.py runserver
 ```
 
 django link:
