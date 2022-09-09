@@ -30,7 +30,7 @@ def main_cycle(connection):
         # Order check for notifications
         order_to_notice(data)
 
-        print('[INFO] Next iter')
+        # print('[INFO] Next iter')
 
 
 def first_create(connection):
