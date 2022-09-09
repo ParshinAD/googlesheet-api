@@ -59,3 +59,7 @@ python main.py
 ## telegram notification
 
 if an entry with today appears in the table, you will receive a telegram notification.
+
+# Contacts
+
+with all questions write to the mail: aparshin01@mail.ru
