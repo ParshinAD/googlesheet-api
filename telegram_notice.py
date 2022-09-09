@@ -4,7 +4,7 @@ from telethon.sync import TelegramClient
 from datetime import date, datetime, timedelta
 from telethon.tl.types import InputPeerUser, InputPeerChannel
 from telethon import TelegramClient, sync, events
-from config import api_id, api_hash, token, phone
+from config import api_id, api_hash, token, phone, user_id
 import csv
 
 
@@ -59,7 +59,7 @@ def send_telegram_notice(pk):
     try:
         # receiver user_id and access_hash, use
         # my user_id and access_hash for reference
-        receiver = InputPeerUser(338994363, 0)
+        receiver = InputPeerUser(user_id, 0)
 
         # sending message using telegram client
         client.send_message(receiver, message, parse_mode='html')
