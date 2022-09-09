@@ -1,6 +1,6 @@
 # googlesheet-api
 
-googlesheet-api is a Python app for parsing data from google sheet into PostgresSQL.
+googlesheet-api is a Python app for parsing data from google sheet into PostgresSQL. Data form database then used by django in its single page web application.
 
 ## Downloading
 
