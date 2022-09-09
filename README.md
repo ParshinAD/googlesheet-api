@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
     d. host: database server address e.g., localhost or an IP address. default = '127.0.0.1'
 
-    e. port: the port number that defaults to 5432 if it is not provided.
+    e. port: the port number. Default = 5432.
 
 2) edit telegram api_id, api_hash: https://core.telegram.org/api/obtaining_api_id
 
