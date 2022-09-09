@@ -17,7 +17,10 @@ cd googlesheet-api
 pip install -r requirements.txt
 ```
 
-## edit config.py
+### edit config.py
+
+1) edit user, password and database_name
+2) edit telegram api_id, api_hash: https://core.telegram.org/api/obtaining_api_id
 
 ## Start main program
 
@@ -25,13 +28,6 @@ pip install -r requirements.txt
 python main.py
 ```
 
-## start django app
-
-in second terminal:
-
-```bash
-python django/django-postgres/postgresTest/manage.py runserver
-```
 
 django link:
 http://localhost:8000/gsapi/test2/
